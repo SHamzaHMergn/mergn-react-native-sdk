@@ -1,6 +1,6 @@
 {
   "name": "mergn-react-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MERGN SDK for React Native \u2014 analytics, attributes, identity and push for Android and iOS from one JS API.",
   "keywords": [
     "react-native",

@@ -95,14 +95,21 @@ Set the extension's deployment target to match your app (it must not be higher).
 
 Android needs nothing here — MERGN's SDK handles images itself.
 
-## Platform guides
+## Documentation
+
+Full setup and usage for both platforms lives in MERGN's SDK documentation:
+
+**[MERGN React Native SDK guide](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md)**
 
 | | |
 | --- | --- |
-| [docs/ANDROID.md](docs/ANDROID.md) | Android setup, push, popups, troubleshooting |
-| [docs/IOS.md](docs/IOS.md) | iOS setup, push, rich images, troubleshooting |
-| [docs/BARE-REACT-NATIVE.md](docs/BARE-REACT-NATIVE.md) | **Setup without Expo** — bare React Native, step by step |
-| [docs/MIGRATION.md](docs/MIGRATION.md) | **Upgrading from a manual integration — read this first if you copied MergnModule.java into your app** |
+| [Install and setup](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#1-install) | Expo and bare React Native |
+| [API reference](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#4-api-reference) | All six methods |
+| [Push notifications](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#6-push-notifications) | Firebase, permissions |
+| [iOS App Group](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#7-ios-app-group-required) | Required for notification analytics |
+| [ProGuard rules](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#11-proguard-android-release-builds) | Android release builds |
+| [Troubleshooting](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#13-troubleshooting) | Common errors |
+| [docs/MIGRATION.md](docs/MIGRATION.md) | **Replacing a manual integration — read first** |
 
 ## Requirements
 
@@ -111,7 +118,7 @@ Android needs nothing here — MERGN's SDK handles images itself.
 | iOS | 14.0+, device and simulator |
 | Android | minSdk 24+ |
 | React Native | 0.72+ (verified on 0.74.5 and 0.76.5) |
-| Expo | SDK 50+ — **optional**, see [BARE-REACT-NATIVE.md](docs/BARE-REACT-NATIVE.md) |
+| Expo | SDK 50+ — **optional**, see [the setup guide](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#3-setup-bare-react-native) |
 | Architecture | Old and new (new via React Native's interop layer) |
 | Expo Go | Not supported — cannot load native modules |
 | macOS / tvOS / visionOS / Web | Not supported |

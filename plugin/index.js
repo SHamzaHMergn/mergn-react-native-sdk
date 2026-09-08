@@ -151,7 +151,7 @@ function withMergnSdkPod(config) {
             "\nThis usually means the config plugin ran on a bare React Native " +
             "project, which does not use Expo's Podfile. Bare projects are " +
             "supported, but configure iOS by hand instead — see " +
-            "node_modules/mergn-react-native/docs/BARE-REACT-NATIVE.md\n" +
+            "https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#3-setup-bare-react-native\n" +
             "\nIf you meant to use the plugin, add this inside your app target:\n" +
             line + "\n"
         );

@@ -240,7 +240,7 @@ plugin adds the manifest service and permissions; the package's own
 dependencies. You do **not** touch `MainApplication`, `settings.gradle`, or
 `app/build.gradle` again.
 
-See [ANDROID.md](./ANDROID.md) for Firebase/push setup and the Android 13+
+See [the MERGN React Native SDK guide](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#6-push-notifications) for Firebase/push setup and the Android 13+
 runtime permission, which are unchanged from your old integration.
 
 ### Step 8 — Update your JavaScript
@@ -311,7 +311,7 @@ If you had a hand-rolled iOS integration:
    npx expo run:ios
    ```
 
-See [IOS.md](./IOS.md) for the full iOS setup.
+See [the MERGN React Native SDK guide](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#32-ios-iospodfile) for the full iOS setup.
 
 ---
 
