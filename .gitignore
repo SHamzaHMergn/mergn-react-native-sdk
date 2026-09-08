@@ -1,0 +1,23 @@
+node_modules/
+*.tgz
+.DS_Store
+*.log
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.p8
+*.p12
+*.jks
+*.keystore
+*.key
+*.mobileprovision
+*-service-account*.json
+
+# build artifacts from scripts/release-ios.sh
+dist/
+
+# Mergn iOS SDK binary: shipped in the npm tarball, not in git.
+# Hosted for releases at github.com/SHamzaHMergn/Mergn_sdk_ios
+sdk/mergn_ios.xcframework/

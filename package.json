@@ -1,0 +1,59 @@
+{
+  "name": "mergn-react-native",
+  "version": "1.0.1",
+  "description": "MERGN SDK for React Native \u2014 analytics, attributes, identity and push for Android and iOS from one JS API.",
+  "keywords": [
+    "react-native",
+    "expo",
+    "mergn",
+    "analytics",
+    "push-notifications",
+    "ios",
+    "android",
+    "expo-config-plugin",
+    "marketing-automation",
+    "sdk"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Mergn",
+  "homepage": "https://github.com/SHamzaHMergn/mergn-react-native-sdk#readme",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "app.plugin.js": "plugin/index.js",
+  "files": [
+    "src",
+    "plugin",
+    "ios",
+    "android",
+    "app.plugin.js",
+    "mergn-react-native.podspec",
+    "README.md",
+    "scripts",
+    "react-native.config.js",
+    "sdk",
+    "docs",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "expo": ">=50",
+    "react-native": ">=0.72"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "prepack": "node scripts/verify-package.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHamzaHMergn/mergn-react-native-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SHamzaHMergn/mergn-react-native-sdk/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

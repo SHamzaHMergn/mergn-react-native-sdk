@@ -1,0 +1,44 @@
+MERGN React Native SDK — License Agreement
+
+Copyright (c) 2026 MERGN. All rights reserved.
+
+1. Grant of License
+   MERGN grants you a non-exclusive, non-transferable, revocable license to
+   install and use this package (the "Software"), including the MERGN mobile
+   SDK binaries distributed with or referenced by it, solely to integrate
+   MERGN services into your own applications.
+
+2. Restrictions
+   You may not:
+   (a) reverse engineer, decompile, or disassemble the SDK binaries, except to
+       the extent such restriction is prohibited by applicable law;
+   (b) redistribute, sublicense, sell, or rent the Software as a standalone
+       product, or as part of any product that competes with MERGN;
+   (c) remove or alter any copyright, trademark, or proprietary notice.
+
+   Redistributing the Software as an embedded component of your own
+   application is permitted and expected.
+
+3. Ownership
+   MERGN retains all right, title, and interest in the Software. This license
+   conveys no ownership.
+
+4. Third-Party Components
+   The Software depends on third-party open-source components, each governed
+   by its own license. Those licenses are unaffected by this agreement.
+
+5. No Warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+6. Limitation of Liability
+   IN NO EVENT SHALL MERGN BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+7. Termination
+   This license terminates automatically if you breach any term. On
+   termination you must cease use and remove the Software from your products.
+
+For commercial terms, support, or questions: https://mergn.com
