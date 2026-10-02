@@ -1,5 +1,6 @@
 const {
   withAndroidManifest,
+  withProjectBuildGradle,
   withXcodeProject,
   withDangerousMod,
   AndroidConfig,
@@ -10,6 +11,7 @@ const path = require("path");
 // Autolinking handles registering the native module on both platforms. This
 // plugin covers what autolinking cannot:
 //   - Android: the SDK's FirebaseMessagingService + the permissions it needs
+//   - Android: the JitPack repository the SDK is published on
 //   - iOS:     CocoaPods/Xcode quirks that otherwise break the build
 //   - iOS:     the optional rich-push NotificationService extension
 //
@@ -28,7 +30,7 @@ function withMergnAndroid(config) {
     const manifest = cfg.modResults;
 
     for (const name of PERMISSIONS) {
-      AndroidConfig.Manifest.ensurePermission(manifest, name);
+      AndroidConfig.Permissions.ensurePermission(manifest, name);
     }
 
     const application = AndroidConfig.Manifest.getMainApplicationOrThrow(manifest);
@@ -50,6 +52,31 @@ function withMergnAndroid(config) {
       });
     }
 
+    return cfg;
+  });
+}
+
+// The Android SDK is published on JitPack. A library's own `repositories` block
+// does not apply when the app resolves that library's dependencies, so the app
+// project itself must list JitPack or Gradle fails with "Could not find
+// com.github.SHamzaHMergn:Mergn_sdk_android".
+const JITPACK = "maven { url 'https://www.jitpack.io' }";
+
+function withJitpackRepository(config) {
+  return withProjectBuildGradle(config, (cfg) => {
+    if (cfg.modResults.language !== "groovy") return cfg;
+    const gradle = cfg.modResults.contents;
+    if (/jitpack\.io/.test(gradle)) return cfg;
+
+    const allprojectsRepos = /(allprojects\s*\{\s*repositories\s*\{)/;
+    if (!allprojectsRepos.test(gradle)) {
+      throw new Error(
+        "[mergn-react-native] Could not add JitPack to android/build.gradle: " +
+          "no allprojects { repositories { } } block. Add this line to the " +
+          "repositories your app resolves dependencies from:\n  " + JITPACK
+      );
+    }
+    cfg.modResults.contents = gradle.replace(allprojectsRepos, `$1\n        ${JITPACK}`);
     return cfg;
   });
 }
@@ -216,6 +243,7 @@ function withMinimumIosVersion(config) {
 
 module.exports = function withMergn(config, props = {}) {
   let next = withMergnAndroid(config);
+  next = withJitpackRepository(next);
   next = withMinimumIosVersion(next);
   next = withMergnSdkPod(next);
   next = withoutFirebaseScriptPhaseCycle(next);

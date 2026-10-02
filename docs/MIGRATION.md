@@ -238,10 +238,28 @@ Add the plugin to `app.json`:
 ```
 
 That is the entire native setup. Autolinking registers the module; the config
-plugin adds the manifest service and permissions; the package's own
-`build.gradle` pulls the SDK from JitPack and declares its transitive
-dependencies. You do **not** touch `MainApplication`, `settings.gradle`, or
+plugin adds the manifest service, permissions and the JitPack repository; the
+package's own `build.gradle` pulls the SDK from JitPack and declares its
+transitive dependencies; the package's manifest starts the SDK at process
+start. You do **not** touch `MainApplication`, `settings.gradle`, or
 `app/build.gradle` again.
+
+If your app configures WorkManager on demand (it implements
+`Configuration.Provider` and removes `WorkManagerInitializer` from its
+manifest), remove MERGN's initializer too, or WorkManager is initialized with
+the default configuration first and your app fails with "WorkManager is already
+initialized". The SDK then starts on the first `registerApi` call instead:
+
+```xml
+<provider
+    android:name="androidx.startup.InitializationProvider"
+    android:authorities="${applicationId}.androidx-startup"
+    tools:node="merge">
+    <meta-data
+        android:name="com.mergn.reactnative.MergnInitializer"
+        tools:node="remove" />
+</provider>
+```
 
 See [the MERGN React Native SDK guide](https://github.com/mergn-code/App-SDK-Documentation/blob/main/MERGN%20React%20Native%20SDK.md#6-push-notifications) for Firebase/push setup and the Android 13+
 runtime permission, which are unchanged from your old integration.

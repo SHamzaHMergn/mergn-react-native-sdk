@@ -52,6 +52,8 @@ dependencies {
   //   androidx.core           - notification building
   //   kotlin stdlib/coroutines- the SDK is written in Kotlin
   //   gson                    - payload serialisation (85 references)
+  //   retrofit + converter-gson - networking (RetrofitClient); brings okhttp3
+  //   installreferrer         - install attribution (AppInstallReferer)
   //   firebase-messaging      - FireBaseMessagingService, declared in our manifest
   implementation "androidx.room:room-runtime:${safeExtGet('roomVersion', '2.6.1')}"
   implementation "androidx.work:work-runtime-ktx:${safeExtGet('workVersion', '2.9.0')}"
@@ -61,6 +63,9 @@ dependencies {
   implementation 'androidx.appcompat:appcompat:1.6.1'
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
   implementation 'com.google.code.gson:gson:2.10.1'
+  implementation "com.squareup.retrofit2:retrofit:${safeExtGet('retrofitVersion', '2.9.0')}"
+  implementation "com.squareup.retrofit2:converter-gson:${safeExtGet('retrofitVersion', '2.9.0')}"
+  implementation 'com.android.installreferrer:installreferrer:2.2'
 
   // compileOnly: the host app supplies its own Firebase version via
   // google-services, and pinning one here would risk a conflict.
