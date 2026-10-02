@@ -141,7 +141,10 @@ Anything you added to `onCreate` for MERGN comes out as well:
   }
 ```
 
-This package initializes the SDK for you on the first `registerApi` call.
+This package initializes the SDK for you when the app process starts (through
+AndroidX App Startup, before `MainApplication.onCreate()`), so the SDK sees the
+cold-start launch and notification taps. You still call `registerApi` from JS
+for the API key.
 
 **This step is also silent if you skip it.**
 

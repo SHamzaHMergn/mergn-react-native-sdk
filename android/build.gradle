@@ -55,6 +55,8 @@ dependencies {
   //   firebase-messaging      - FireBaseMessagingService, declared in our manifest
   implementation "androidx.room:room-runtime:${safeExtGet('roomVersion', '2.6.1')}"
   implementation "androidx.work:work-runtime-ktx:${safeExtGet('workVersion', '2.9.0')}"
+  // MergnInitializer starts the SDK at process start through App Startup.
+  implementation 'androidx.startup:startup-runtime:1.1.1'
   implementation 'androidx.core:core-ktx:1.13.1'
   implementation 'androidx.appcompat:appcompat:1.6.1'
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'

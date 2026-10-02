@@ -20,6 +20,8 @@ const required = [
   "android/build.gradle",
   "android/src/main/java/com/mergn/reactnative/MergnModule.java",
   "android/src/main/java/com/mergn/reactnative/MergnPackage.java",
+  "android/src/main/java/com/mergn/reactnative/MergnInitializer.java",
+  "android/src/main/AndroidManifest.xml",
   "README.md",
 ];
 
